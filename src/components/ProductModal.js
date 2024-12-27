@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css"; // You can style it here
+import "../App.css"; 
 
 function ProductModal({ product, onClose }) {
   return (

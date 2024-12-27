@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ProductModal from "./ProductModal"; // Import ProductModal component
+import ProductModal from "./ProductModal"; 
 
 function ProductList() {
   const [products, setProducts] = useState([]);
