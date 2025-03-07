@@ -5,9 +5,7 @@ function Navbar({ isAuthenticated, username, onLogout }) {
     <nav className="navbar">
       <h2>SimplyBuyers</h2>
       <ul>
-        <li>
-          <Link to="/">Login</Link>
-        </li>
+        <li>{isAuthenticated ? <></> : <Link to="/login">Login</Link>}</li>
         {isAuthenticated ? (
           <>
             <li>
