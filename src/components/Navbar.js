@@ -1,17 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ isAuthenticated, username, onLogout }) {
   return (
-    <nav>
+    <nav className="navbar">
       <h2>SimplyBuyers</h2>
       <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/signin">Sign In</Link>
-        </li>
+        <li>{isAuthenticated ? <></> : <Link to="/login">Login</Link>}</li>
+        {isAuthenticated ? (
+          <>
+            <li>
+              <span>Welcome, {username}</span>
+            </li>
+            <li>
+              <Link to="/products">Products</Link>
+            </li>
+            <li>
+              <button onClick={onLogout}>Logout</button>
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to="/">Sign In</Link>
+          </li>
+        )}
       </ul>
     </nav>
   );
